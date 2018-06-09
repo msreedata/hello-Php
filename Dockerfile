@@ -2,8 +2,9 @@ FROM node:alpine
 
 MAINTAINER inSreeMan@gmail.com
 
-# Copy app to /src.
+# Copy app to /src
 COPY . /src
+COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 #install php
 RUN apk add --no-cache apache2 php7 \
