@@ -14,9 +14,6 @@ RUN apk add --no-cache apache2 php7-apache2 \
     # fix "could not create /run/apache2/httpd.pid" error \
     && mkdir /run/apache2
 
-#apk add --no-cache apache2 php5-apache2 openrc
-#apk add openrc --no-cache
-
 # Install app and dependencies into /src
 
 EXPOSE 80
