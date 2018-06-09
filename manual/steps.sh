@@ -13,9 +13,7 @@ sudo yum -y install docker
 ls
 read -rsp $'Press any key to continue...\n' -n1 key
 
-systemctl status docker
 systemctl start docker
-systemctl status docker
 systemctl enable docker
 systemctl status docker
 read -rsp $'Press any key to continue...\n' -n1 key
