@@ -3,7 +3,7 @@ FROM node:alpine
 MAINTAINER inSreeMan@gmail.com
 
 # Copy app to /src
-COPY . /src/php
+COPY . /srv/php
 COPY .docker/php/vhost.conf /etc/apache2/vhost.d/000-default.conf
 
 #install php
