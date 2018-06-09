@@ -10,7 +10,9 @@ COPY .docker/php/vhost.conf /etc/apache2/vhost.d/000-default.conf
 RUN apk add --no-cache apache2 php7 \
     && echo "IncludeOptional /etc/apache2/vhost.d/*.conf" >> /etc/apache2/httpd.conf \
     && ln -sf /proc/self/fd/1 /var/log/apache2/access.log \
-    && ln -sf /proc/self/fd/1 /var/log/apache2/error.log
+    && ln -sf /proc/self/fd/1 /var/log/apache2/error.log \ 
+    # fix "could not create /run/apache2/httpd.pid" error \
+    && mkdir /run/apache2
 
 #apk add --no-cache apache2 php5-apache2 openrc
 #apk add openrc --no-cache
