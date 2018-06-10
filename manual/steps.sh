@@ -18,10 +18,13 @@ systemctl enable docker
 systemctl status docker
 read -rsp $'Press any key to continue...\n' -n1 key
 
-sudo docker build . -t hellophp:v1
+cd $HOME/dockerstore/hello-Php
+git pull
+
+sudo docker build . -t hellophp:v2
 sudo docker image ls
 read -rsp $'Press any key to continue...\n' -n1 key
 
-sudo docker run --rm -d -p 80:8080 --name hello1 hellophp:v1
+sudo docker run --rm -d -p 81:80 --name hphp2 hellophp:v2
 sudo docker ps -a
 #
